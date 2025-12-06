@@ -7,6 +7,7 @@ const ViaCep = {
         }
 
         try {
+            // MUDANÇA: Garantir que é HTTPS://
             const response = await fetch(`https://viacep.com.br/ws/${cleanCep}/json/`);
             const data = await response.json();
             
@@ -17,7 +18,7 @@ const ViaCep = {
             return data;
         } catch (error) {
             console.error("Erro ao buscar CEP:", error);
-            alert("Erro de conexão com ViaCEP.");
+            alert("Erro de conexão com ViaCEP (Verifique se é HTTPS).");
             return null;
         }
     }

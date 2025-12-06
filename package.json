@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
 "scripts": {
-    "build:css": "npx sass src/css:public/css --no-source-map",
+    "build:css": "node node_modules/sass/sass.js src/css:public/css --no-source-map",
     "start": "npm run build:css && node server/index.js",
     "test": "npx cypress open"
   },
