@@ -2,8 +2,8 @@
   "name": "backend-claro",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "build:css": "sass src/css:public/css --no-source-map",
+"scripts": {
+    "build:css": "npx sass src/css:public/css --no-source-map",
     "start": "npm run build:css && node server/index.js",
     "test": "npx cypress open"
   },
