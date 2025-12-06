@@ -1,0 +1,104 @@
+@charset "UTF-8";
+form {
+  background-color: #e30613; /* Fundo Vermelho */
+  color: white; /* Texto Branco */
+  padding: 2rem;
+  border-radius: 12px; /* Bordas mais arredondadas */
+  box-shadow: 0 4px 15px rgba(227, 6, 19, 0.3); /* Sombra avermelhada */
+  max-width: 100%;
+}
+form .form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+form .form-group label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: white; /* Garante que o label seja branco */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+form .form-group input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+form .form-group input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+form {
+  /* Estilo das linhas (lado a lado) */
+}
+form .form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end; /* Alinha o botão com o input */
+}
+form .form-row .form-group {
+  flex: 1;
+}
+form .form-row .small {
+  flex: 0 0 140px; /* Largura fixa para CEP e Número */
+}
+form .form-row {
+  /* Responsividade para celular */
+}
+@media (max-width: 600px) {
+  form .form-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  form .form-row .small {
+    flex: 1;
+  }
+}
+form hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Linha sutil */
+  margin: 1.5rem 0;
+}
+form button#btnBuscarCep {
+  background-color: #fff; /* Botão branco para destacar no vermelho */
+  color: #e30613;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 48px; /* Mesma altura do input padrão */
+  margin-top: auto; /* <-- ADICIONE ESTA LINHA */
+}
+form button#btnBuscarCep:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+form button#btnBuscarCep:active {
+  transform: translateY(0);
+}
+form button#btnGerar {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #ffffff; /* Preto para contraste máximo ou Branco */
+  color: rgb(0, 0, 0);
+  border: 2px solid white; /* Borda branca estilosa */
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+form button#btnGerar:hover {
+  background-color: rgb(0, 0, 0);
+  color: #e30613;
+}

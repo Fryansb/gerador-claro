@@ -1,0 +1,119 @@
+@use "sass:color";
+
+// Cor oficial da Claro
+$claro-red: #e30613;
+
+form {
+    background-color: $claro-red; /* Fundo Vermelho */
+    color: white; /* Texto Branco */
+    padding: 2rem;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 15px rgba(227, 6, 19, 0.3); /* Sombra avermelhada */
+    max-width: 100%;
+
+    .form-group {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: white; /* Garante que o label seja branco */
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            background: #fff;
+            color: #333;
+
+            &:focus {
+                // Sombra suave branca ao focar
+                box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+                outline: none;
+            }
+        }
+    }
+
+    /* Estilo das linhas (lado a lado) */
+    .form-row {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-end; /* Alinha o botão com o input */
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .small {
+            flex: 0 0 140px; /* Largura fixa para CEP e Número */
+        }
+
+        /* Responsividade para celular */
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            
+            .small {
+                flex: 1;
+            }
+        }
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid rgba(255,255,255, 0.3); /* Linha sutil */
+        margin: 1.5rem 0;
+    }
+
+
+    button#btnBuscarCep {
+        background-color: #fff; /* Botão branco para destacar no vermelho */
+        color: $claro-red;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+        height: 48px; /* Mesma altura do input padrão */
+        margin-top: auto;     /* <-- ADICIONE ESTA LINHA */
+
+        &:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    button#btnGerar {
+        width: 100%;
+        padding: 1.2rem;
+        background-color: #ffffff; /* Preto para contraste máximo ou Branco */
+        color: rgb(0, 0, 0);
+        border: 2px solid white; /* Borda branca estilosa */
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-top: 1rem;
+
+        &:hover {
+            background-color: rgb(0, 0, 0);
+            color: $claro-red;
+        }
+    }
+}
