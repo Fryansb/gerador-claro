@@ -17,12 +17,12 @@ const gerarDocumento = (dados) => {
     const zip = new PizZip(content);
 
     let doc;
-    try {
+ try {
         doc = new Docxtemplater(zip, {
             paragraphLoop: true,
             linebreaks: true,
-            // AQUI ESTÁ O SEGREDO: Usamos colchetes para o Word não dar erro
-            delimiters: { start: '[[', end: ']]' }
+            // ADICIONE ESTA LINHA:
+            delimiters: { start: '[[', end: ']]' } 
         });
     } catch (error) {
         // Se der erro, mostra no terminal o motivo exato

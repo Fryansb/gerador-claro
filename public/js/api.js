@@ -1,7 +1,7 @@
 const Api = {
     gerarDocumento: async (dados) => {
         try {
-            const response = await fetch('http://localhost:3000/gerar', {
+            const response = await fetch('/gerar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
